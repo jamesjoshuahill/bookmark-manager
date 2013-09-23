@@ -1,8 +1,11 @@
 require 'sinatra/base'
+require 'haml'
 
 class BookmarkManager < Sinatra::Base
+  set :views, File.join(File.dirname(__FILE__), '..', 'views')
+
   get '/' do
-    'Welcome to Bookmark Manager'
+    haml :index
   end
 
   # start the server if ruby file executed directly
