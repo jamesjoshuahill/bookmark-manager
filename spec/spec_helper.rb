@@ -6,9 +6,12 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 ENV["RACK_ENV"] = 'test'
-require './lib/bookmark_manager'
+
 require 'database_cleaner'
 require 'capybara/rspec'
+
+require './lib/bookmark_manager'
+require './spec/support/features'
 
 Capybara.app = BookmarkManager
 
