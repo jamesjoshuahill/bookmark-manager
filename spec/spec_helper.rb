@@ -8,6 +8,9 @@
 ENV["RACK_ENV"] = 'test'
 require './lib/bookmark_manager'
 require 'database_cleaner'
+require 'capybara/rspec'
+
+Capybara.app = BookmarkManager
 
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
