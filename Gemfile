@@ -17,4 +17,5 @@ group :development, :test do
   gem 'guard'
   gem 'guard-cucumber'
   gem 'guard-rspec'
+  gem 'database_cleaner'
 end
