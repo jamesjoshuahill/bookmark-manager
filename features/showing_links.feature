@@ -6,3 +6,9 @@ Feature: Showing links
   Scenario: When there are no links
     Given I am on the homepage
     Then I should see "Welcome to Bookmark Manager"
+    And there should be no links
+
+  Scenario: When there are no links (less declarative)
+    Given I have just opened the application
+    When I take a look at the application
+    Then there should be no links
