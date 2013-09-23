@@ -11,7 +11,6 @@ require './lib/link'
 DataMapper.finalize
 DataMapper.auto_upgrade!
 
-
 class BookmarkManager < Sinatra::Base
   set :views, File.join(File.dirname(__FILE__), '..', 'views')
 
