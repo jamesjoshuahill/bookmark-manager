@@ -11,11 +11,11 @@ group :development, :test do
   gem 'shotgun'
   gem 'cucumber'
   gem 'cucumber-sinatra'
-  gem 'gherkin'
   gem 'rspec'
   gem 'capybara'
   gem 'guard'
   gem 'guard-cucumber'
   gem 'guard-rspec'
+  gem 'terminal-notifier-guard'
   gem 'database_cleaner'
 end
