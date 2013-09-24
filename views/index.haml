@@ -10,7 +10,7 @@
         - @links.each do |link|
           %li
             %a{ href: link.url }= link.title
-    %id#new-link
+    #new-link
       %form{ action: '/links', method: 'post' }
         Url:
         %input{ type: 'text', name: 'url' }
