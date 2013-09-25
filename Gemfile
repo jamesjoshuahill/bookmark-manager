@@ -4,6 +4,7 @@ ruby '2.0.0'
 
 gem 'sinatra'
 gem 'haml'
+gem 'rack-flash3'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'bcrypt-ruby'

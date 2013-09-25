@@ -3,4 +3,7 @@
   %head
     %title Bookmark Manager
   %body
+    - if flash[:notice]
+      #notice
+        = flash[:notice]
     = yield
