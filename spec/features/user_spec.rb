@@ -16,4 +16,10 @@ feature 'User signs up' do
     expect(page).to have_content("Sorry, your passwords didn't match")
   end
 
+  scenario "with an email that has already been registered" do
+    expect { sign_up }.to change(User, :count).by 1
+    expect { sign_up }.not_to change(User, :count)
+    expect(page).to have_content("This email is already taken")
+  end
+
 end

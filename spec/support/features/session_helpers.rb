@@ -19,7 +19,9 @@ module Features
       end      
     end
 
-    def sign_up(email="jess@puppy.com", password="cheese!", password_confirmation="cheese!")
+    def sign_up(email="jess@puppy.com",
+                password="cheese!",
+                password_confirmation="cheese!")
       visit '/users/new'
       fill_in 'email', :with => email
       fill_in 'password', :with => password

@@ -6,4 +6,9 @@
     - if flash[:notice]
       #notice
         = flash[:notice]
+    - if flash[:errors] and !flash[:errors].empty?
+      Sorry, there were the following problems:
+      %ul#errors
+        - flash[:errors].each do |error|
+          %li= error
     = yield
