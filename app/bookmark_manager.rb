@@ -24,6 +24,10 @@ class BookmarkManager < Sinatra::Base
     haml :'users/new'
   end
 
+  get '/sessions/new' do
+    haml :'sessions/new'
+  end
+
   get '/tags/:text' do
     tag = Tag.first(text: params[:text])
     @links = tag ? tag.links : []
@@ -40,6 +44,18 @@ class BookmarkManager < Sinatra::Base
     else
       flash.now[:errors] = @user.errors.full_messages
       haml :'users/new'
+    end
+  end
+
+  post '/sessions' do
+    email, password = params[:email], params[:password]
+    user = User.authenticate(email, password)
+    if user
+      session[:user_id] = user.id
+      redirect to '/'
+    else
+      flash[:errors] = ["The email or password are incorrect"]
+      haml :'sessions/new'
     end
   end
 
