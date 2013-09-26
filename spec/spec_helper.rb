@@ -10,7 +10,6 @@ ENV["RACK_ENV"] = 'test'
 require 'database_cleaner'
 require 'capybara/rspec'
 require './app/bookmark_manager'
-require './spec/support/features'
 
 Capybara.app = BookmarkManager
 

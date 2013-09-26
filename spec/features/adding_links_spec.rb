@@ -1,4 +1,7 @@
 require 'spec_helper'
+require_relative 'helpers/link'
+
+include Features::LinkHelpers
 
 feature "User adds a new link" do
 
@@ -10,6 +13,16 @@ feature "User adds a new link" do
     link = Link.first
     expect(link.url).to eq "http://www.makersacademy.com/"
     expect(link.title).to eq "Makers Academy"
+  end
+
+  scenario "with a few tags" do
+    visit "/"
+    add_link_with_tag("http://www.makersacademy.com/", 
+                "Makers Academy", 
+                ['education', 'ruby'])    
+    link = Link.first
+    expect(link.tags.map(&:text)).to include("education")
+    expect(link.tags.map(&:text)).to include("ruby")
   end
   
 end
