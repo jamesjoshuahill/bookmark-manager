@@ -1,11 +1,11 @@
 require 'sinatra/base'
+require 'sinatra/application_helpers'
 require 'haml'
 require 'rack-flash'
 require 'data_mapper'
 require './lib/link'
 require './lib/tag'
 require './lib/user'
-require_relative 'helpers/application'
 require_relative 'data_mapper_setup'
 
 class BookmarkManager < Sinatra::Base
@@ -13,7 +13,7 @@ class BookmarkManager < Sinatra::Base
   set :session_secret, 'Supercalifragilisticexpialidocious'
   use Rack::Flash
   use Rack::MethodOverride
-  helpers ApplicationHelpers
+  helpers Sinatra::ApplicationHelpers
 
   get '/' do
     @links = Link.all
