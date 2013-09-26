@@ -1,0 +1,65 @@
+body {
+  font-family: Helvetica, Verdana, sans-serif;
+  font-size: 12pt;
+  background-image: url(/images/dimension.png);
+  /*==========================================================
+      This pattern is downloaded from www.subtlepatterns.com 
+      If you need more, that's where to get'em.
+    ==========================================================*/
+}
+
+header {
+  width: 100%;
+  height: 3em;
+  background-color: #79a7ce;
+  color: white;
+  display: flex;
+  display: -webkit-flex;
+  padding: 0;
+}
+
+  header > * {
+    margin: auto 0;
+  }
+
+  header #logo {
+    font-size: 1.5em;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    width: 10em;
+    padding: 0 1em;
+  }
+
+  header #user-links {
+    flex: 1;
+    -webkit-flex: 1;
+    text-align: right;
+    padding: 0 1em;
+  }
+
+  header a.button {
+    display: inline-block;
+    padding: 0.25em 0.6em;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+    width: 5em;
+    background-color: #82B743;
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 1);
+  }
+
+  header a.button:hover {
+    background-color: #4382b7;
+  }
+
+  header a.button.highlighted {
+    background-color: #cea079;
+  }
+
+  header a.button.highlighted:hover {
+    background-color: #4382b7;
+  }

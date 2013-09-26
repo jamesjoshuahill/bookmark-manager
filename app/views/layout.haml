@@ -2,7 +2,9 @@
 %html
   %head
     %title Bookmark Manager
+    %link{ href: '/stylesheets/html5-doctor-reset-stylesheet.min.css', rel: 'stylesheet', type: 'text/css' }
+    %link{ href: '/stylesheets/application.css', rel: 'stylesheet', type: 'text/css' }
   %body
-    = partial :welcome_message
+    = partial :header
     = partial :flash
     = yield

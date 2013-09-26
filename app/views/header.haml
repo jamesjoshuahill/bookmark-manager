@@ -1,0 +1,14 @@
+%header
+  #logo Bookmark Manager
+  %a.button.highlighted{ href: '/links/new' } Add link
+  #user-links
+    %span.welcome_message
+      - if current_user
+        Welcome,
+        = @current_user.email
+        %form#sign-out{ action: '/sessions', method: 'post' }
+          %input{ type: 'hidden', name: '_method', value: 'delete' }
+          %input{ type: 'submit', value: 'Sign out' }
+      - else
+        %a.button{ href: '/users/new', id: 'sign-up' } Sign up
+        %a.button{ href: '/sessions/new', id: 'sign-in' } Login
