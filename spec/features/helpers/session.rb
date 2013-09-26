@@ -1,6 +1,5 @@
 module Features
   module SessionHelpers
-
     def sign_up(email="jess@puppy.com",
                 password="cheese!",
                 password_confirmation="cheese!")
@@ -17,6 +16,5 @@ module Features
       fill_in 'password', :with => password
       click_button 'Sign in'
     end
-
   end
 end

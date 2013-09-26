@@ -4,11 +4,11 @@ require_relative 'helpers/link'
 include Features::LinkHelpers
 
 feature "User adds a new link" do
-
   scenario "when browsing the homepage" do
     expect(Link.count).to eq 0
     visit '/'
-    add_link("http://www.makersacademy.com/", "Makers Academy")
+    add_link("http://www.makersacademy.com/",
+             "Makers Academy")
     expect(Link.count).to eq 1
     link = Link.first
     expect(link.url).to eq "http://www.makersacademy.com/"
@@ -17,12 +17,11 @@ feature "User adds a new link" do
 
   scenario "with a few tags" do
     visit "/"
-    add_link_with_tag("http://www.makersacademy.com/", 
-                "Makers Academy", 
-                ['education', 'ruby'])    
+    add_link("http://www.makersacademy.com/", 
+             "Makers Academy", 
+             ['education', 'ruby'])    
     link = Link.first
     expect(link.tags.map(&:text)).to include("education")
     expect(link.tags.map(&:text)).to include("ruby")
   end
-  
 end
