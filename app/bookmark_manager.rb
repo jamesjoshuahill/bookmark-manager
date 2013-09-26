@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'sinatra/partial'
 require 'data_mapper'
 require 'rack-flash'
 require 'haml'
@@ -21,12 +22,15 @@ class BookmarkManager < Sinatra::Base
   set :session_secret, 'Supercalifragilisticexpialidocious'
   use Rack::Flash
   use Rack::MethodOverride
-  helpers Sinatra::ApplicationHelpers
+  register Sinatra::Partial
+
   register Sinatra::ApplicationController
   register Sinatra::SessionController
   register Sinatra::UserController
   register Sinatra::LinkController
-  register Sinatra::TagController
+  register Sinatra::TagController  
+
+  helpers Sinatra::ApplicationHelpers
 
   # start the server if ruby file executed directly
   run! if app_file == $0
