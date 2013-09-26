@@ -1,7 +1,7 @@
 require 'sinatra/base'
 
 module Sinatra
-  module IndexController
+  module ApplicationController
     def self.registered(app)
       app.get '/' do
         @links = Link.all
