@@ -63,3 +63,31 @@ header {
   header a.button.highlighted:hover {
     background-color: #4382b7;
   }
+
+#links-container {
+  background-color: white;
+  margin: 1.5em;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  padding: 1.5em 1.5em 0.25em;
+}
+
+.link {
+  background-color: #EEE;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  margin: 0 0 1.5em 0;
+  padding: 1em 1em;
+  list-style: none;
+}
+
+  .link a.title {
+    letter-spacing: 0.1em;
+  }
+
+  .link .description {
+    margin: 0.5em inherit;
+  }
+
+  .link .source {
+    float: right; 
+    font-size: 10pt;
+  }

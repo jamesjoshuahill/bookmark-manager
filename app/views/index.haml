@@ -1,7 +1,4 @@
-%h1 Welcome to Bookmark Manager
-%section
-  %h3 Current links:
-  %ul
+#links-container
+  %ul#links
     - @links.each do |link|
-      %li
-        %a{ href: link.url }= link.title
+      = partial :link, :locals => { :link => link }
