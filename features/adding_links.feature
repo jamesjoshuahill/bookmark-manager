@@ -5,6 +5,7 @@ Feature: Adding links
 
   Scenario: When there are no links
     Given I have just opened the application
+    And I follow "Add a link"
     When I fill in "url" with "http://www.google.co.uk"
     And I fill in "title" with "Google UK"
     And I press "Add link"

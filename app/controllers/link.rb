@@ -3,6 +3,10 @@ require 'sinatra/base'
 module Sinatra
   module LinkController
     def self.registered(app)
+      app.get '/links/new' do
+        haml :'links/new'
+      end
+
       app.post '/links' do
         url = params['url']
         title = params['title']
