@@ -1,6 +1,10 @@
-- if current_user
-  Welcome,
-  = @current_user.email
+#user
+  - if current_user
+    Welcome,
+    = @current_user.email
+    %form{ action: '/sessions', method: 'post' }
+      %input{ type: 'hidden', name: '_method', value: 'delete' }
+      %input{ type: 'submit', value: 'Sign out' }
 %h1 Welcome to Bookmark Manager
 %section
   %h3 Current links:

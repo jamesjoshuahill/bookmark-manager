@@ -12,6 +12,7 @@ class BookmarkManager < Sinatra::Base
   set :sessions, true
   set :session_secret, 'Supercalifragilisticexpialidocious'
   use Rack::Flash
+  use Rack::MethodOverride
   helpers ApplicationHelpers
 
   get '/' do
@@ -66,6 +67,12 @@ class BookmarkManager < Sinatra::Base
       Tag.first_or_create(text: tag)
     end
     Link.create(url: url, title: title, tags: tags)
+    redirect to '/'
+  end
+
+  delete '/sessions' do
+    flash[:notice] = 'Goodbye!'
+    session[:user_id] = nil
     redirect to '/'
   end
 
