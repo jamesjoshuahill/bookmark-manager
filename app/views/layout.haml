@@ -5,6 +5,9 @@
     %link{ href: '/stylesheets/html5-doctor-reset-stylesheet.min.css', rel: 'stylesheet', type: 'text/css' }
     %link{ href: '/stylesheets/application.css', rel: 'stylesheet', type: 'text/css' }
   %body
-    = partial :header
-    = partial :flash
-    = yield
+    #wrapper 
+      = partial :header
+      = partial :flash
+      = yield
+      #push
+    = partial :footer
