@@ -55,30 +55,38 @@ header {
     padding: 0 1em;
   }
 
-  header a.button {
+  header #welcome-message {
+    
+  }
+
+  header .button {
     display: inline-block;
     padding: 0.25em 0.6em;
     margin-left: 0.25em;
     margin-right: 0.25em;
-    width: 5em;
+    width: 7em;
     background-color: #82B743;
     border: 2px solid white;
     border-radius: 10px;
+    font-family: Helvetica, Verdana, sans-serif;
+    font-size: 12pt;
     color: white;
     text-decoration: none;
     text-align: center;
     text-shadow: 0 0 3px rgba(0, 0, 0, 1);
+    cursor: pointer;
+    box-sizing: border-box;
   }
 
-  header a.button:hover {
+  header .button:hover {
     background-color: #4382b7;
   }
 
-  header a.button.highlighted {
+  header .button.highlighted {
     background-color: #cea079;
   }
 
-  header a.button.highlighted:hover {
+  header .button.highlighted:hover {
     background-color: #4382b7;
   }
 
@@ -129,6 +137,7 @@ footer {
     -webkit-flex: 1;
     flex: 1;
     text-align: right;
+    font-size: 10pt;
   }
 
   footer p {
