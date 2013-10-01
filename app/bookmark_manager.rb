@@ -18,6 +18,7 @@ require_relative 'helpers/application'
 require_relative 'data_mapper_setup'
 
 class BookmarkManager < Sinatra::Base
+  set :public_folder, 'public'
   set :sessions, true
   set :session_secret, 'Supercalifragilisticexpialidocious'
   use Rack::Flash
